@@ -35,10 +35,10 @@
     </header>
     <main class="container">
         <section class="row">
-            <div class="img col-md-6">
-                <img src="/img/about.svg" alt="" srcset="">
+            <div class="col-6">
+                <img src="/img/about.svg" alt="" srcset="" class="w-100">
             </div>
-            <article class="text-center col-md-6">
+            <article class="text-center col-6">
                 <h1>Eu sou</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, delectus id. Provident fuga debitis
                     sint deleniti. Libero commodi nihil delectus excepturi asperiores beatae illo quidem cumque aperiam non,
@@ -49,15 +49,19 @@
             <div class="col-12">
                 <h1 class="text-center">Projetos</h1>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Projeto 1</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+
+            <% projetos.forEach(projeto => { %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= projeto.nome %></h5>
+                            <p class="card-text"><%= projeto.descricao %></p>
+                            <p class="card-text">Tecnologias utilizadas: <%= projeto.tecnologia %></p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% }) %>
+            
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

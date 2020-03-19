@@ -1,7 +1,8 @@
 const express = require('express');
 const rotas = require('./src/routes');
 const app = express();
-
+app.set('view engine', 'ejs')
+app.set('views', './src/views')
 
 app.use(express.static(__dirname + '/public'))
 app.use(rotas)
